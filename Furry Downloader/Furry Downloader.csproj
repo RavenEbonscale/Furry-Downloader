@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Furry_Downloader</RootNamespace>
+    <ApplicationIcon>1474070060.raventhedragon_ravyn.ico</ApplicationIcon>
+    <AssemblyVersion>1.5.1.0</AssemblyVersion>
+    <Version>1.5.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E621_Downloader\E621_Downloader.csproj" />
+    <ProjectReference Include="..\Reddit_Downloader\Reddit_Downloader.csproj" />
+    <ProjectReference Include="..\Rule34\Rule34.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
