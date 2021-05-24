@@ -6,7 +6,7 @@ using System.IO;
 using System.Text.Json;
 using System;
 
-namespace E621_Downloaderyea
+namespace E621_Downloader
 {
     public static class Helper
     {
