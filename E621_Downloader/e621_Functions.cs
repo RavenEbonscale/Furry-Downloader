@@ -10,7 +10,6 @@ namespace E621_Downloader
 {
     internal class e621_Functions
     {
-     
         private static async Task<List<(string, string, int, string[], string)>> E621JasonAsync(string Tag, int pages, Api api)
         {
             HttpClient client = api.e621Client;
@@ -47,21 +46,18 @@ namespace E621_Downloader
                     wc.DownloadFile(url.Item1, @$".\{Folder}\{url.Item2}.{url.Item5}");
                     Helper.ProgressBar(y, total);
                     Interlocked.Increment(ref y);
-
-                    
                 }
             }
                 );
         }
 
-        public static async Task E621Async(string tagfile, Api api) {
+        public static async Task E621Async(string tagfile, Api api)
+        {
             List<string> tags = msc.Readtagfile(tagfile);
             foreach (var tag in tags)
             {
                 await Download(tag, 10, api);
             }
         }
-
-        
-        }
     }
+}

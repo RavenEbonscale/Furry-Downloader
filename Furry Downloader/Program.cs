@@ -45,10 +45,6 @@ namespace Furry_Downloader
                     case "5":
                         await E621(false);
                         break;
-                    case "6":
-                        Rule34.Rule34DL.Rule34();
-                        
-                        break;
                     default:
                         Console.WriteLine("This isn't a choice please try again");
                         break;

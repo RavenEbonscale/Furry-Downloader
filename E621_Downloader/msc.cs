@@ -16,8 +16,7 @@ namespace E621_Downloader
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-
-                        string tag = line.Replace(",", "+").Replace(" ", String.Empty).Replace("\\","\\\\");
+                        string tag = line.Replace(",", "+").Replace(" ", String.Empty).Replace("\\", "\\\\");
 
                         tags.Add(tag);
                     }
@@ -40,8 +39,6 @@ namespace E621_Downloader
             return tags;
         }
 
-       
-
         public static (string apikey, string user) Stuff(string config_path)
         {
             List<string> Apiinfor = new List<string>();
@@ -59,13 +56,11 @@ namespace E621_Downloader
                     Apiinfor.Add(split[1]);
                 }
             }
-            
+
             string api = Apiinfor[0];
             string user = Apiinfor[1];
 
             return (api, user);
         }
     }
-
-    
 }
