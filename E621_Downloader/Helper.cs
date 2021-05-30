@@ -31,7 +31,7 @@ namespace E621_Downloader
             // Desealize the json file and put it into the e621 class
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
             HttpResponseMessage responseMessage = await client.SendAsync(requestMessage);
-            Console.WriteLine(responseMessage);
+            //Console.WriteLine(responseMessage);
             byte[] response = await responseMessage.Content.ReadAsByteArrayAsync();
             //Has to be turned into an io stream so it can be used as an async
             MemoryStream stream = new MemoryStream(response);
