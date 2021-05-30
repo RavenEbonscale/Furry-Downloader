@@ -6,6 +6,7 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Misc_functions;
 
 
 
@@ -32,6 +33,7 @@ namespace Reddit_Downloader
             List<string> subreddits = new List<string> { };
             string[] file = File.ReadAllLines(redditfile);
             foreach (string sr in file) subreddits.Add(sr.Trim().Replace("r/", ""));
+            foreach (string sub in subreddits)if(!Directory.Exists($@".\reddit\{sub}")) $@".\reddit\{sub}".Creation(); 
             RedditClient r = new RedditClient(appId: "", appSecret: "", userAgent: "Raven Ebonscale mega gay bot", refreshToken: "");
             List<(string url, string subreddit)> Urls = GrabPosts(r, subreddits);
             Download(Urls);
@@ -44,48 +46,21 @@ namespace Reddit_Downloader
         {
             Parallel.ForEach(urls, (url) =>
             {
-                if (!Directory.Exists(url.subreddit))
-                {
-                    using WebClient wc = new WebClient();
-                    try
-                    {
-                        Directory.CreateDirectory(url.subreddit);
-                        string ext = Path.GetExtension(url.url);
-                        Console.WriteLine($" Done Downloading: {url.url}");
-                        wc.DownloadFile(url.url, @$"{url.subreddit}\{RNG()}.{ext}");
 
-                    }
-                    catch
-                    {
-                    }
-                }
-                else
-                {
-                    using WebClient wc = new WebClient();
-                    try
-                    {
+                using WebClient wc = new WebClient();
 
-                        string ext = Path.GetExtension(url.url);
-
-                        Console.WriteLine($" Done Downloading: {url.url}");
-                        wc.DownloadFile(url.url, @$"{url.subreddit}\{RNG()}.{ext}");
-
-
-                    }
-                    catch { }
-                }
+                Directory.CreateDirectory(url.subreddit);
+                string ext = Path.GetExtension(url.url);
+                Console.WriteLine($" Done Downloading: {url.url}");
+                wc.DownloadFile(url.url, @$".\reddit\{url.subreddit}\{Miscfun.Generatefilename(ext)}");
             });
         }
 
 
 
-        private static int RNG()
-        {
-            Random rng = new Random();
-            int number = rng.Next(7209348);
 
-            return number;
-        }
+
+
 
 
 
@@ -111,4 +86,3 @@ namespace Reddit_Downloader
     }
 
 }
-

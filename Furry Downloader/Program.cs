@@ -54,7 +54,7 @@ namespace Furry_Downloader
                     case "4":
                         await Rule34DL.Rule34Async();
                         goto begening;
-                        break;
+                        
                         
                         
                     default:
