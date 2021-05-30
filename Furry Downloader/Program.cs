@@ -13,7 +13,9 @@ namespace Furry_Downloader
     {
         static async Task Main()
         {
-            Console.WriteLine("I'm Going to add something Clever here~");
+        begening:
+            
+            Console.WriteLine("\nI'm Going to add something Clever here~");
             Console.WriteLine("Make your Choice");
             Console.WriteLine("1: E621");
             Console.WriteLine("2: e926 (aka safe for work E621)");
@@ -51,6 +53,7 @@ namespace Furry_Downloader
                     case "rule34":
                     case "4":
                         await Rule34DL.Rule34Async();
+                        goto begening;
                         break;
                         
                         

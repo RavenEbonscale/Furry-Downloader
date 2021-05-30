@@ -75,8 +75,8 @@ namespace Misc_functions
         public static string Generatefilename(string ext)
         {
             Random r = new Random();
-            int len = r.Next(1, 50);
-            string[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            int len = r.Next(5, 50);
+            string[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","Owo","WoW","MwM","OpO","Carty","Throdoor","Lewd","YoY","G,G",};
             string filename = "";
             int l = 0;
             while (l < len)

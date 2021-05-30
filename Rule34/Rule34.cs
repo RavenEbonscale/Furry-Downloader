@@ -3,6 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Threading;
 using Misc_functions;
+
 namespace Rule34
 {
     public class Rule34DL
@@ -28,11 +29,11 @@ namespace Rule34
                         wc.DownloadFile(lewd.urls, $@".\rule34\{tag}\{filename}");
                         Miscfun.ProgressBar(y, total);
                         Interlocked.Increment(ref y);
+                        Thread.Sleep(100);
                     }
                 });
+                
             }
-
-
         }
 
 
