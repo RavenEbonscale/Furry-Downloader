@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Misc functions\Misc functions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="E621_Class_Libary">
       <HintPath>E621_Class_Libary.dll</HintPath>
     </Reference>

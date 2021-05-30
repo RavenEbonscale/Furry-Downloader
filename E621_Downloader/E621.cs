@@ -1,5 +1,6 @@
 ﻿using E621_Class_libary;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace E621_Downloader
@@ -12,7 +13,7 @@ namespace E621_Downloader
             var tagfile = @".\tags.txt";
             Console.WriteLine(apikey + user);
             Api Api = new Api(apikey, user, "Furry_downloader (by Purple_Drago on e621)");
-            System.Collections.Generic.List<string> tags = msc.Readtagfile(tagfile);
+            List<string> tags = msc.Readtagfile(tagfile);
 
             switch (choice) {
                 case "e621":

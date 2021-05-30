@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Misc_functions;
 
 namespace E621_Downloader
 {
@@ -31,7 +32,7 @@ namespace E621_Downloader
                 using (WebClient wc = new WebClient())
                 {
                     wc.DownloadFile(url.Item1, @$".\{Folder}\{url.Item2}.{url.Item5}");
-                    Helper.ProgressBar(y, total);
+                    Miscfun.ProgressBar(y, total);
                 }
             }
                 );

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-
-namespace Rule34
+namespace Misc_functions
 {
-    class msc
+    public static class Miscfun
     {
         public static List<string> Readtagfile(string tagfile)
         {
@@ -17,7 +16,7 @@ namespace Rule34
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        string tag = line.Replace(",", "+");
+                        string tag = line.Replace(",", "+").Replace(" ", String.Empty).Replace("\\", "\\\\");
 
                         tags.Add(tag);
                     }
@@ -32,11 +31,61 @@ namespace Rule34
                     //Adding generic tags
                     sw.WriteLine("Gay");
                     sw.WriteLine("straight");
+                    sw.WriteLine("straight,-gay");
 
                     sw.Close();
                 }
             }
             return tags;
+        }
+
+        public static (string apikey, string user) Stuff(string config_path)
+        {
+            List<string> Apiinfor = new List<string>();
+
+            using (StreamReader sr = new StreamReader(config_path))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] split = line.Split('=');
+                    if (split[1] == null)
+                    {
+                        continue;
+                    }
+                    Apiinfor.Add(split[1].Trim());
+                }
+            }
+
+            string api = Apiinfor[0];
+            string user = Apiinfor[1];
+
+            return (api, user);
+        }
+
+        public static void Creation(this string Folder)
+        {
+            if (!Directory.Exists(Folder))
+            {
+                Console.WriteLine("File path Created Owo");
+                Directory.CreateDirectory(Folder);
+            }
+        }
+
+        public static string Generatefilename(string ext)
+        {
+            Random r = new Random();
+            int len = r.Next(1, 50);
+            string[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            string filename = "";
+            int l = 0;
+            while (l < len)
+            {
+                filename += alphabet[r.Next(alphabet.Length)];
+                l++;
+            }
+            return filename + ext;
+
         }
 
         public static void ProgressBar(int progress, int total)
@@ -71,5 +120,8 @@ namespace Rule34
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(progress.ToString() + " of " + total.ToString() + "    "); //blanks at the end remove any excess
         }
+
+
+
     }
 }

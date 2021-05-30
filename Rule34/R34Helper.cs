@@ -11,7 +11,7 @@ namespace Rule34
 {
     public static class R34Helper
     {
-        public static async Task<List<(string urls, string ext)>> Deserializetion(this string url)
+     public static async Task<List<(string urls, string ext)>> Deserializetion(this string url)
         {
             XmlDocument doc = new XmlDocument();
             //XmlSerializer serializer = new XmlSerializer(typeof(Rule34Api));
@@ -37,18 +37,6 @@ namespace Rule34
             return lewders;
             }
 
-
-
-
-
-            //serializer.Deserialize(stream);
-
-
-
-
-
-
-
-        }
+    }
     }
 

@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using E621_Downloader;
-using Reddit_DownloaderLocal;
+using Reddit_Downloader;
 
 
 namespace Furry_Downloader
@@ -20,9 +20,6 @@ namespace Furry_Downloader
             Console.WriteLine("3: Reddit");
             Console.WriteLine("4: rule34");
             Console.WriteLine("5: All");
-            //Console.WriteLine("4: All");
-            //Console.WriteLine("5: e621 stream (checks the website based on tags and downloads the latest)");
-            //Console.WriteLine("4: rule34"); API is fucked
             bool retry = true;
             while (retry == true) {
                 string Choice = Console.ReadLine().ToLower();

@@ -1,4 +1,5 @@
 ﻿using E621_Class_libary;
+using Misc_functions;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -44,7 +45,7 @@ namespace E621_Downloader
                 using (WebClient wc = new WebClient())
                 {
                     wc.DownloadFile(url.Item1, @$".\{Folder}\{url.Item2}.{url.Item5}");
-                    Helper.ProgressBar(y, total);
+                    Miscfun.ProgressBar(y, total);
                     Interlocked.Increment(ref y);
                 }
             }
