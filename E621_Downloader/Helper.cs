@@ -31,6 +31,7 @@ namespace E621_Downloader
             // Desealize the json file and put it into the e621 class
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
             HttpResponseMessage responseMessage = await client.SendAsync(requestMessage);
+            Console.WriteLine(responseMessage);
             byte[] response = await responseMessage.Content.ReadAsByteArrayAsync();
             //Has to be turned into an io stream so it can be used as an async
             MemoryStream stream = new MemoryStream(response);
@@ -57,7 +58,8 @@ namespace E621_Downloader
             }
             return folderstring = "MaleMale";
         }
-        public static async void downloadasync(this string url,string md5,string extenstion,string path,string tag)
+        public static async         Task
+downloadasync(this string url,string md5,string extenstion,string path,string tag)
         {
             using (WebClient wc = new WebClient())
             {

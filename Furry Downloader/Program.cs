@@ -1,50 +1,62 @@
 ﻿using System;
-
+using Rule34;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using E621_Downloader;
-using Reddit_Downloader;
+using Reddit_DownloaderLocal;
 
 
 namespace Furry_Downloader
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static async Task Main()
         {
             Console.WriteLine("I'm Going to add something Clever here~");
             Console.WriteLine("Make your Choice");
             Console.WriteLine("1: E621");
             Console.WriteLine("2: e926 (aka safe for work E621)");
             Console.WriteLine("3: Reddit");
-            Console.WriteLine("4: All");
+            Console.WriteLine("4: rule34");
+            Console.WriteLine("5: All");
+            //Console.WriteLine("4: All");
             //Console.WriteLine("5: e621 stream (checks the website based on tags and downloads the latest)");
             //Console.WriteLine("4: rule34"); API is fucked
             bool retry = true;
             while (retry == true) {
-                string Choice = Console.ReadLine();
+                string Choice = Console.ReadLine().ToLower();
 
                 switch (Choice)
                 {
                     case "1":
+                    case"e621":
                         await E621();
                         retry = false;
                         break;
                     case "2":
+                    case "e926":
                         await E621(false);
                         retry = false;
                         break;
                     case "3":
+                    case "reddit":
                         Reddit_Dl.reddit();
                         retry = false;
                         break;
-                    case "4":
+                    case "5":
+                    case "all":
                         All_Run();
                         break;
-                    case "5":
+                    case "6":
                         await E621(false);
                         break;
+                    case "rule34":
+                    case "4":
+                        await Rule34DL.Rule34Async();
+                        break;
+                        
+                        
                     default:
                         Console.WriteLine("This isn't a choice please try again");
                         break;
@@ -64,9 +76,11 @@ namespace Furry_Downloader
             Thread e621 = new Thread(async () => await E621());
             Thread e926 = new Thread(async () => await E621(false));
             Thread reddit = new Thread(new ThreadStart(Reddit_Dl.reddit));
+
             e621.Start();
             e926.Start();
             reddit.Start();
+ 
             
         }
 
@@ -98,7 +112,7 @@ namespace Furry_Downloader
                 using (StreamWriter sw = File.AppendText(@".\config.txt"))
                 {
                     Console.WriteLine("You are going to need to use your own API and username");
-                    Console.WriteLine("https://e621.net/wiki_pages/2425 follow the instuction here under Logging in");
+                    Console.WriteLine("https://e621.net/wiki_pages/2425 follow the instruction here under Logging in");
                     Console.WriteLine("Then all you will have to do is fill out the Config file and should be all set");
                     sw.WriteLine("Apikey =");
                     sw.WriteLine("username =");

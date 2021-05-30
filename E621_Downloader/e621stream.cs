@@ -45,7 +45,7 @@ namespace E621_Downloader
                 if (newmd5.Equals(oldmd5) == false)
                 {
                     oldmd5 = newmd5;
-                    url.downloadasync(pasrsed[0].md5, pasrsed[0].extention, path,tag);
+                     await url.downloadasync(pasrsed[0].md5, pasrsed[0].extention, path,tag);
 
 
 

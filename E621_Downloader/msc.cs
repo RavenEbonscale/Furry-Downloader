@@ -53,7 +53,7 @@ namespace E621_Downloader
                     {
                         continue;
                     }
-                    Apiinfor.Add(split[1]);
+                    Apiinfor.Add(split[1].Trim());
                 }
             }
 

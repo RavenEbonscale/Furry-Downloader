@@ -25,7 +25,7 @@ namespace Reddit_Downloader
                 {
                     sw.WriteLine("r/yiff");
                     sw.WriteLine("r/gfur");
-                    Console.WriteLine("Example reddit list hadd been created");
+                    Console.WriteLine("Example reddit list had been created");
                 }
             }
 
