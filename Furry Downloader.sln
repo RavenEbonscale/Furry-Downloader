@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rule34", "Rule34\Rule34.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misc functions", "Misc functions\Misc functions.csproj", "{4A30ADA1-77A0-4071-8474-58668CBEE908}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E621_Wrapper", "J:\Raven's programing stuff\C#\E621 consle app\E621 Class libary\E621_Wrapper.csproj", "{DB840463-6A81-4B43-8616-C97687B41680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E621_Wrapper", "E621 Class libary\E621_Wrapper.csproj", "{BCA885B0-CA50-49F5-8FFD-060E4FE616D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB840463-6A81-4B43-8616-C97687B41680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB840463-6A81-4B43-8616-C97687B41680}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB840463-6A81-4B43-8616-C97687B41680}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB840463-6A81-4B43-8616-C97687B41680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA885B0-CA50-49F5-8FFD-060E4FE616D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA885B0-CA50-49F5-8FFD-060E4FE616D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA885B0-CA50-49F5-8FFD-060E4FE616D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA885B0-CA50-49F5-8FFD-060E4FE616D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

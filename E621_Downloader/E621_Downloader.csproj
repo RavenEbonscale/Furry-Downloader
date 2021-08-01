@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\E621 Class libary\E621_Wrapper.csproj" />
     <ProjectReference Include="..\Misc functions\Misc functions.csproj" />
-    <ProjectReference Include="J:\Raven's programing stuff\C#\E621 consle app\E621 Class libary\E621_Wrapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
