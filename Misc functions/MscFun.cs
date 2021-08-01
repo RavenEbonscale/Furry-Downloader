@@ -76,7 +76,7 @@ namespace Misc_functions
         {
             Random r = new Random();
             int len = r.Next(5, 50);
-            string[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","Owo","WoW","MwM","OpO","Carty","Throdoor","Lewd","YoY","G,G",};
+            string[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "Owo", "WoW", "MwM", "OpO", "Carty", "Throdoor", "Lewd", "YoY", "G,G", };
             string filename = "";
             int l = 0;
             while (l < len)
@@ -85,7 +85,6 @@ namespace Misc_functions
                 l++;
             }
             return filename + ext;
-
         }
 
         public static void ProgressBar(int progress, int total)
@@ -120,8 +119,5 @@ namespace Misc_functions
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write(progress.ToString() + " of " + total.ToString() + "    "); //blanks at the end remove any excess
         }
-
-
-
     }
 }

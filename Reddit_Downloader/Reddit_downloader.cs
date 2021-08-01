@@ -1,4 +1,5 @@
-﻿using Reddit;
+﻿using Misc_functions;
+using Reddit;
 using Reddit.Controllers;
 using System;
 using System.Collections.Generic;
@@ -6,16 +7,13 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Misc_functions;
-
-
 
 namespace Reddit_Downloader
 {
     public class Reddit_Dl
 
     {
-        public static void reddit()
+        public static void Reddit()
         {
             Console.WriteLine("This might take a while depending on how  many subreddits you added");
 
@@ -33,20 +31,16 @@ namespace Reddit_Downloader
             List<string> subreddits = new List<string> { };
             string[] file = File.ReadAllLines(redditfile);
             foreach (string sr in file) subreddits.Add(sr.Trim().Replace("r/", ""));
-            foreach (string sub in subreddits)if(!Directory.Exists($@".\reddit\{sub}")) $@".\reddit\{sub}".Creation(); 
+            foreach (string sub in subreddits) if (!Directory.Exists($@".\reddit\{sub}")) $@".\reddit\{sub}".Creation();
             RedditClient r = new RedditClient(appId: "", appSecret: "", userAgent: "Raven Ebonscale mega gay bot", refreshToken: "");
             List<(string url, string subreddit)> Urls = GrabPosts(r, subreddits);
             Download(Urls);
-
         }
-
-
 
         private static void Download(List<(string url, string subreddit)> urls)
         {
             Parallel.ForEach(urls, (url) =>
             {
-
                 using WebClient wc = new WebClient();
 
                 Directory.CreateDirectory(url.subreddit);
@@ -55,14 +49,6 @@ namespace Reddit_Downloader
                 wc.DownloadFile(url.url, @$".\reddit\{url.subreddit}\{Miscfun.Generatefilename(ext)}");
             });
         }
-
-
-
-
-
-
-
-
 
         private static List<(string url, string subreddit)> GrabPosts(RedditClient r, List<string> subreddits)
         {
@@ -84,5 +70,4 @@ namespace Reddit_Downloader
             return Url;
         }
     }
-
 }

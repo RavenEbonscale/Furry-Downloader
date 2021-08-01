@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Misc_functions;
+using System.Collections.Generic;
 using System.Net;
-using System.Threading.Tasks;
 using System.Threading;
-using Misc_functions;
+using System.Threading.Tasks;
 
 namespace Rule34
 {
@@ -12,7 +12,7 @@ namespace Rule34
         {
             string tagfile = $@".\rule34.txt";
             List<string> Tags = Miscfun.Readtagfile(tagfile);
-            foreach(string tag in Tags)
+            foreach (string tag in Tags)
             {
                 string Folder = $@".\rule34\{tag}";
                 Folder.Creation();
@@ -32,10 +32,7 @@ namespace Rule34
                         Thread.Sleep(100);
                     }
                 });
-                
             }
         }
-
-
     }
 }

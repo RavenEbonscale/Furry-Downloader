@@ -1,10 +1,11 @@
 ﻿using System;
+using Misc_functions;
 using System.Collections.Generic;
 using System.IO;
 
 namespace E621_Downloader
 {
-    public class msc
+    public class Msc
     {
         public static List<string> Readtagfile(string tagfile)
         {
@@ -26,7 +27,10 @@ namespace E621_Downloader
             {
                 using (StreamWriter sw = File.AppendText(tagfile))
                 {
+                    
                     Console.WriteLine("Tag file has been made with starting tag list");
+                    Console.WriteLine($"It is located at {tagfile}");
+
 
                     //Adding generic tags
                     sw.WriteLine("Gay");

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using E621_Downloader;
+using Reddit_DownloaderLocal;
 using Rule34;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using E621_Downloader;
-using Reddit_Downloader;
 
 
 namespace Furry_Downloader
@@ -20,19 +20,23 @@ namespace Furry_Downloader
             Console.WriteLine("1: E621");
             Console.WriteLine("2: e926 (aka safe for work E621)");
             Console.WriteLine("3: Reddit");
-            Console.WriteLine("4: rule34");
+            Console.WriteLine("4: Rule34");
             Console.WriteLine("5: All");
+            Console.WriteLine("end:stops the program");
+            
             bool retry = true;
+            
             while (retry == true) {
-                string Choice = Console.ReadLine().ToLower();
+             string Choice = Console.ReadLine().ToLower();
 
                 switch (Choice)
                 {
                     case "1":
                     case"e621":
                         await E621();
-                        retry = false;
-                        break;
+                       
+                        goto begening;
+                           
                     case "2":
                     case "e926":
                         await E621(false);
@@ -40,13 +44,14 @@ namespace Furry_Downloader
                         break;
                     case "3":
                     case "reddit":
-                        Reddit_Dl.reddit();
-                        retry = false;
-                        break;
+                        Reddit_Dl.Reddit();
+                        goto begening;
+
                     case "5":
                     case "all":
                         All_Run();
-                        break;
+                        goto begening;
+
                     case "6":
                         await E621(false);
                         break;
@@ -54,7 +59,8 @@ namespace Furry_Downloader
                     case "4":
                         await Rule34DL.Rule34Async();
                         goto begening;
-                        
+                    case "end":
+                        goto end;
                         
                         
                     default:
@@ -64,7 +70,7 @@ namespace Furry_Downloader
 
 
                 } }
-
+            end:
             Console.ReadKey();
             
             
@@ -75,7 +81,7 @@ namespace Furry_Downloader
            
             Thread e621 = new Thread(async () => await E621());
             Thread e926 = new Thread(async () => await E621(false));
-            Thread reddit = new Thread(new ThreadStart(Reddit_Dl.reddit));
+            Thread reddit = new Thread(new ThreadStart(Reddit_Dl.Reddit));
 
             e621.Start();
             e926.Start();
@@ -94,14 +100,16 @@ namespace Furry_Downloader
             {
 
                 
-                (string apikey, string user) apikey = msc.Stuff(@".\config.txt");
-                if (e621 == true) { await E621_DL.E621(apikey.apikey, apikey.user);
+                (string apikey, string user) apikey = Msc.Stuff(@".\config.txt");
+                if (e621 == true) { E621Dl.Furry_dl(apikey.apikey, apikey.user);
+
+                    
                     Console.ReadKey();
                 }
 
                 else
                 {
-                    await E621_DL.E621(apikey.apikey, apikey.user, "e926");
+                    E621Dl.Furry_dl(apikey.apikey,apikey.user,true);
 
                 }
                 Console.ReadKey();

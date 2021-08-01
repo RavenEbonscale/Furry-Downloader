@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="E621_Class_Libary" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Misc functions\Misc functions.csproj" />
+    <ProjectReference Include="J:\Raven's programing stuff\C#\E621 consle app\E621 Class libary\E621_Wrapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

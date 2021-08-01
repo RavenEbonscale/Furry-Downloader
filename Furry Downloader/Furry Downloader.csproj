@@ -10,27 +10,13 @@
     <Copyright>Raven Ebonscale</Copyright>
     <Authors>Raven Ebonscale</Authors>
     <Company>OwO factory</Company>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\E621_Downloader\E621_Downloader.csproj" />
     <ProjectReference Include="..\Reddit_Downloader\Reddit_Downloader.csproj" />
     <ProjectReference Include="..\Rule34\Rule34.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
 
 

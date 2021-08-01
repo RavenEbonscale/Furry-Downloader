@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reddit_Downloader", "Reddit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rule34", "Rule34\Rule34.csproj", "{143FA6B2-7DB8-4D5C-B224-7751C90D2519}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Misc functions", "Misc functions\Misc functions.csproj", "{4A30ADA1-77A0-4071-8474-58668CBEE908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misc functions", "Misc functions\Misc functions.csproj", "{4A30ADA1-77A0-4071-8474-58668CBEE908}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E621_Wrapper", "J:\Raven's programing stuff\C#\E621 consle app\E621 Class libary\E621_Wrapper.csproj", "{DB840463-6A81-4B43-8616-C97687B41680}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A30ADA1-77A0-4071-8474-58668CBEE908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB840463-6A81-4B43-8616-C97687B41680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB840463-6A81-4B43-8616-C97687B41680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB840463-6A81-4B43-8616-C97687B41680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB840463-6A81-4B43-8616-C97687B41680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
