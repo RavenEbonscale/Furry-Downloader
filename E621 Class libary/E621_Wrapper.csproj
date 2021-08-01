@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>E621_Wrapper</RootNamespace>
+    <AssemblyName>E621_Wrapper</AssemblyName>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <Version>1.1</Version>
+    <FileVersion>1.1.0.0</FileVersion>
+    <PackageId>E621.Wrapper</PackageId>
+    <Authors>Raven Ebonscale</Authors>
+    <Product>E621 Wraper</Product>
+    <Description>An E621 Wrapper for intreacting with the E621 API</Description>
+    <Copyright>Copyright (c) Raven Ebonscale 2021</Copyright>
+    <NeutralLanguage>English</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+</Project>
