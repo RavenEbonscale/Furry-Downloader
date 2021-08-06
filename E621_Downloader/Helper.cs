@@ -1,5 +1,4 @@
-﻿using E621_Class_libary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -28,8 +27,8 @@ namespace E621_Downloader
         {
             if (url != null)
             {
-                string folder = $@"{path}\{tag}";
-                folder.Creation();
+                
+                
 
                 using (WebClient wc = new WebClient())
                 {

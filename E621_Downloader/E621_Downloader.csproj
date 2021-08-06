@@ -6,11 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="E621_Class_Libary" Version="1.2.0" />
+    <PackageReference Include="E621.Wrapper" Version="1.3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\E621 Class libary\E621_Wrapper.csproj" />
     <ProjectReference Include="..\Misc functions\Misc functions.csproj" />
   </ItemGroup>
 

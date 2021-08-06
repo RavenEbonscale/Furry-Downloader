@@ -22,6 +22,8 @@ namespace E621_Downloader
                 var tags = Msc.Readtagfile(@".\e621\tags.txt");
                 foreach (string tag in tags)
                 {
+                    string f = $@".\e621\{tag}";
+                    f.Creation();
                     List<E621json> e621Jsons = e621.Get_Posts(tag, 5);
 
                     foreach (E621json e621Json in e621Jsons)
