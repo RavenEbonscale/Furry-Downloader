@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furry Downloader", "Furry Downloader\Furry Downloader.csproj", "{1680E6A8-8FA9-42D0-AF44-2B27A0D5CCDE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E621_Downloader", "E621_Downloader\E621_Downloader.csproj", "{B7463826-7835-4BBA-BB68-F9A0FD317EDF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reddit_Downloader", "Reddit_Downloader\Reddit_Downloader.csproj", "{B668B4CA-3140-4337-869E-AEFA4FCF84FB}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1680E6A8-8FA9-42D0-AF44-2B27A0D5CCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1680E6A8-8FA9-42D0-AF44-2B27A0D5CCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1680E6A8-8FA9-42D0-AF44-2B27A0D5CCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1680E6A8-8FA9-42D0-AF44-2B27A0D5CCDE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7463826-7835-4BBA-BB68-F9A0FD317EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7463826-7835-4BBA-BB68-F9A0FD317EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7463826-7835-4BBA-BB68-F9A0FD317EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
