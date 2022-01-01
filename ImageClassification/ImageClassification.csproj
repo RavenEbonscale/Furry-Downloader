@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.0" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.7.0" />
+    <PackageReference Include="Microsoft.ML.OnnxTransformer" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="gender.onnx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

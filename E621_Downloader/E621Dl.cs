@@ -1,11 +1,7 @@
 ﻿using E621_Wrapper;
 using Misc_functions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using static E621_Wrapper.e926_api;
 
 namespace E621_Downloader
 {
@@ -50,13 +46,13 @@ namespace E621_Downloader
 
             else
             {
-                E926_Api e621 = new E926_Api(apikey, user, "Raven Ebonscale E621 downloader");
+                Api e926 = new Api(apikey, user, "Raven Ebonscale E926 downloader");
                 string folder = @".\e926";
                 folder.Creation();
                 var tags = Msc.Readtagfile(@".\e926\tags.txt");
                 foreach (string tag in tags)
                 {
-                    List<E621json> e926Jsons = e621.Get_Posts(tag, 5);
+                    List<E621json> e926Jsons = e926.Get_Posts_Sfw(tag, 5);
 
                     foreach (E621json e926Json in e926Jsons)
                     {

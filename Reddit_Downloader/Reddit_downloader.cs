@@ -52,7 +52,7 @@ namespace Reddit_Downloader
 
         private static List<(string url, string subreddit)> GrabPosts(RedditClient r, List<string> subreddits)
         {
-            Regex rx = new Regex(@".*\.(jpg|png|mp4|gif|webm)?$");
+            Regex rx = new Regex(@".*\.(jpg|png)?$");
             List<(string, string)> Url = new List<(string, string)> { };
             Parallel.ForEach(subreddits, (subreddit) =>
             {

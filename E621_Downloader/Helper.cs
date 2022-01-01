@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using Misc_functions;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Net;
+
 
 namespace E621_Downloader
 {
