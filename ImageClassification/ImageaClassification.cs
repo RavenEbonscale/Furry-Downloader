@@ -19,7 +19,7 @@ namespace ImageClassification
             var mlcontext = new MLContext();
             EstimatorChain<OnnxTransformer> pipeline = mlcontext.Transforms.ResizeImages("image", 128, 128, nameof(ModelInput.Image))
              .Append(mlcontext.Transforms.ExtractPixels("Images", "image"))
-            .Append(mlcontext.Transforms.ApplyOnnxModel("dense_1", "Images", ""));
+            .Append(mlcontext.Transforms.ApplyOnnxModel("dense_1", "Images", "gender.onnx"));
 
             IDataView data = mlcontext.Data.LoadFromEnumerable(new List<ModelInput>());
             OnnxOptions onnxOptions = new OnnxOptions();
