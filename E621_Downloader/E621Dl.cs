@@ -62,7 +62,7 @@ namespace E621_Downloader
                 foreach (string tag in tags)
                 {
                     List<E621json> e926Jsons = e926.Get_Posts_Sfw(tag, 5);
-
+                    $@".\e926\{tag.Replace(":", "")}".Creation();
                     foreach (E621json e926Json in e926Jsons)
                     {
                         Parallel.ForEach(e926Json.posts, post =>
