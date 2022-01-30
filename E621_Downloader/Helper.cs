@@ -26,7 +26,7 @@ namespace E621_Downloader
 
                 using (WebClient wc = new WebClient())
                 {
-                    wc.DownloadFile(url, $@"{path}\{tag}\{md5}.{extenstion}");
+                    wc.DownloadFile(url, $@"{path}\{tag.Replace(":","")}\{md5}.{extenstion}");
                 }
             }
         }

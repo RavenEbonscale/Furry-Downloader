@@ -14,24 +14,23 @@ namespace Rule34
             List<string> Tags = Miscfun.Readtagfile(tagfile);
             foreach (string tag in Tags)
             {
-                string Folder = $@".\rule34\{tag}";
-                Folder.Creation();
+                $@".\rule34\{tag}".Creation();
                 string url = @$"https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags={tag}";
                 List<(string urls, string ext)> info = await url.Deserializetion();
                 int y = 1;
                 int total = info.Count;
                 Parallel.ForEach(info, lewd =>
-                {
-                    using (WebClient wc = new WebClient())
-                    {
-                        string filename = Miscfun.Generatefilename(lewd.ext);
+                  {
+                      using (WebClient wc = new WebClient())
+                      {
+                          string filename = Miscfun.Generatefilename(lewd.ext);
                         //Console.WriteLine(filename);
                         wc.DownloadFile(lewd.urls, $@".\rule34\{tag}\{filename}");
-                        Miscfun.ProgressBar(y, total);
-                        Interlocked.Increment(ref y);
-                        Thread.Sleep(100);
-                    }
-                });
+                          Miscfun.ProgressBar(y, total);
+                          Interlocked.Increment(ref y);
+                          Thread.Sleep(100);
+                      }
+                  });
             }
         }
     }

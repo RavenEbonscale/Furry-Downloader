@@ -8,6 +8,7 @@ namespace ImageClassification
 {
        internal interface IImage_Classification {
 
-        string Prediction(byte[] Image);
+       
+        int Prediction(byte[] Image);
     }
 }
