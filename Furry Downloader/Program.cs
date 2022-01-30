@@ -14,7 +14,7 @@ namespace Furry_Downloader
         static async Task Main()
         {
         begening:
-            
+
             Console.WriteLine("\nI'm Going to add something Clever here~");
             Console.WriteLine("Make your Choice");
             Console.WriteLine("1: E621");
@@ -23,20 +23,20 @@ namespace Furry_Downloader
             Console.WriteLine("4: Rule34");
             Console.WriteLine("5: All");
             Console.WriteLine("end:stops the program");
-            
+
             bool retry = true;
-            
+
             while (retry == true) {
-             string Choice = Console.ReadLine().ToLower();
+                string Choice = Console.ReadLine().ToLower();
 
                 switch (Choice)
                 {
                     case "1":
-                    case"e621":
+                    case "e621":
                         await E621();
-                       
+
                         goto begening;
-                           
+
                     case "2":
                     case "e926":
                         await E621(false);
@@ -59,10 +59,13 @@ namespace Furry_Downloader
                     case "4":
                         await Rule34DL.Rule34Async();
                         goto begening;
+                    case "7":
+                       await MachineLearning();
+                        break;
                     case "end":
                         goto end;
-                        
-                        
+
+
                     default:
                         Console.WriteLine("This isn't a choice please try again");
                         break;
@@ -70,15 +73,15 @@ namespace Furry_Downloader
 
 
                 } }
-            end:
+        end:
             Console.ReadKey();
-            
-            
+
+
         }
 
         private static void All_Run()
         {
-           
+
             Thread e621 = new Thread(async () => await E621());
             Thread e926 = new Thread(async () => await E621(false));
             Thread reddit = new Thread(new ThreadStart(Reddit_Dl.Reddit));
@@ -86,30 +89,26 @@ namespace Furry_Downloader
             e621.Start();
             e926.Start();
             reddit.Start();
- 
-            
+
+
         }
-
-
-
-
 
         private static async Task E621(bool e621 = true)
         {
             if (File.Exists(@".\config.txt"))
             {
 
-                
+
                 (string apikey, string user) apikey = Msc.Stuff(@".\config.txt");
                 if (e621 == true) { E621Dl.Furry_dl(apikey.apikey, apikey.user);
 
-                    
+
                     Console.ReadKey();
                 }
 
                 else
                 {
-                    E621Dl.Furry_dl(apikey.apikey,apikey.user,true);
+                    E621Dl.Furry_dl(apikey.apikey, apikey.user, true);
 
                 }
                 Console.ReadKey();
@@ -132,6 +131,34 @@ namespace Furry_Downloader
             }
         }
 
+        private static async Task MachineLearning()
+        {
+            if (File.Exists(@".\config.txt"))
+            {
+
+
+                (string apikey, string user) apikey = Msc.Stuff(@".\config.txt");
+            }
+
+            else
+            {
+
+                using (StreamWriter sw = File.AppendText(@".\config.txt"))
+                {
+                    Console.WriteLine("You are going to need to use your own API and username");
+                    Console.WriteLine("https://e621.net/wiki_pages/2425 follow the instruction here under Logging in");
+                    Console.WriteLine("Then all you will have to do is fill out the Config file and should be all set");
+                    sw.WriteLine("Apikey =");
+                    sw.WriteLine("username =");
+                    sw.Close();
+                    Console.ReadKey();
+                }
+                Checkfortagfile(@".\tags.txt");
+
+            }
+             
+}
+
         private static void Checkfortagfile(string tagfile)
         {
             if (File.Exists(tagfile) == false)
@@ -151,7 +178,8 @@ namespace Furry_Downloader
                 }
 
             }
-        
+            
+
         }
     }
 }

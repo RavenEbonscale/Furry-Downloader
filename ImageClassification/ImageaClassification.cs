@@ -13,7 +13,9 @@ namespace ImageClassification
     public class ImageClassification : IImage_Classification
 
     {
-        public string Prediction(byte[] Image)
+
+
+        public int Prediction(byte[] Image)
         {
             #region Loading The Onnx Model
             var mlcontext = new MLContext();
@@ -22,7 +24,6 @@ namespace ImageClassification
             .Append(mlcontext.Transforms.ApplyOnnxModel("dense_1", "Images", "gender.onnx"));
 
             IDataView data = mlcontext.Data.LoadFromEnumerable(new List<ModelInput>());
-            OnnxOptions onnxOptions = new OnnxOptions();
 
             TransformerChain<OnnxTransformer> model = pipeline.Fit(data);
 
@@ -39,8 +40,11 @@ namespace ImageClassification
             int classification = prediction.Prediction.ArgsMax();
             #endregion
            
-            return Classification.SexualityClassification[classification];
+            return classification;
 
         } 
+
+
+
     }
 }
