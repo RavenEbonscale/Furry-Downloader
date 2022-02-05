@@ -14,7 +14,6 @@ namespace Furry_Downloader
         static async Task Main()
         {
         begening:
-
             Console.WriteLine("\nI'm Going to add something Clever here~");
             Console.WriteLine("Make your Choice");
             Console.WriteLine("1: E621");
@@ -33,6 +32,8 @@ namespace Furry_Downloader
                 {
                     case "1":
                     case "e621":
+                        Console.WriteLine("Please Input your tags");
+                        string tags = Console.ReadLine().ToLower();
                         await E621();
 
                         goto begening;
@@ -93,14 +94,13 @@ namespace Furry_Downloader
 
         }
 
-        private static async Task E621(bool e621 = true)
+        private static async Task E621(bool e621 = true,string tags= null)
         {
-            if (File.Exists(@".\config.txt"))
-            {
+
 
 
                 (string apikey, string user) apikey = Msc.Stuff(@".\config.txt");
-                if (e621 == true) { E621Dl.Furry_dl(apikey.apikey, apikey.user);
+                if (e621 == true) { E621Dl.Furry_dl(tags,apikey.apikey, apikey.user);
 
 
                     Console.ReadKey();
@@ -108,28 +108,15 @@ namespace Furry_Downloader
 
                 else
                 {
-                    E621Dl.Furry_dl(apikey.apikey, apikey.user, true);
+                    E621Dl.Furry_dl(tags,apikey.apikey, apikey.user, true);
 
                 }
                 Console.ReadKey();
             }
-            else
-            {
+         
 
-                using (StreamWriter sw = File.AppendText(@".\config.txt"))
-                {
-                    Console.WriteLine("You are going to need to use your own API and username");
-                    Console.WriteLine("https://e621.net/wiki_pages/2425 follow the instruction here under Logging in");
-                    Console.WriteLine("Then all you will have to do is fill out the Config file and should be all set");
-                    sw.WriteLine("Apikey =");
-                    sw.WriteLine("username =");
-                    sw.Close();
-                    Console.ReadKey();
-                }
-                Checkfortagfile(@".\tags.txt");
-
-            }
-        }
+            
+        
 
         private static async Task MachineLearning()
         {
@@ -159,27 +146,6 @@ namespace Furry_Downloader
              
 }
 
-        private static void Checkfortagfile(string tagfile)
-        {
-            if (File.Exists(tagfile) == false)
-            {
-
-                using (StreamWriter sw = File.AppendText(tagfile))
-                {
-
-                    Console.WriteLine("Tag file has been made with starting tag list");
-
-                    //Adding generic tags
-                    sw.WriteLine("Gay");
-                    sw.WriteLine("straight");
-                    sw.WriteLine("straight,-gay");
-
-                    sw.Close();
-                }
-
-            }
-            
-
-        }
+       
     }
 }
